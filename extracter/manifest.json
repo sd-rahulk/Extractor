@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "ProfilesXD",
+  "version": "2.0.0",
+  "description": "Extract pannum user profiles ah",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://toolzu.com/search-instagram-profiles/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

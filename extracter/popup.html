@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProfilesXD</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        #profiles {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        #profiles:hover {
+            transform: scale(1.05);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .profile:hover img {
+            transform: scale(1.1);
+        }
+        .profile span {
+            font-weight: bold;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+        .profile:hover span {
+            color: #0056b3;
+        }
+        #copy {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #copy:hover {
+            background-color: #0056b3;
+        }
+        #copy:active {
+            background-color: #004080;
+        }
+        #blocked-message {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px;
+        }
+        #error-message {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px;
+        }
+        #no-profiles-message {
+            display: none;
+            margin-bottom: 10px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="no-profiles-message">No profiles found</div>
+    <div id="profiles"></div>
+    <button id="copy">Copy Profiles</button>
+    <div id="blocked-message">This extension can only be used on toolzu.com</div>
+    <!-- <div class="error-message" id="error-message" style="display: none;">An error occured. Please reload the extension or the page</div> -->
+
+    <script src="popup.js"></script>
+</body>
+</html>
